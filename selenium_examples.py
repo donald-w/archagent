@@ -114,6 +114,18 @@ def main():
         scraper.scroll_to_bottom()
         
         # Pause before closing
+        input("\nPress Enter to run JavaScript query...")
+        
+        # Example: Get all headings from the page
+        headings = scraper.execute_js("""
+            return Array.from(document.querySelectorAll('h1, h2, h3'))
+                .map(h => ({level: h.tagName, text: h.textContent.trim()}));
+        """)
+        
+        print("\nPage Headings:")
+        for heading in headings:
+            print(f"{heading['level']}: {heading['text']}")
+        
         input("\nPress Enter to close the browser...")
         
     finally:
