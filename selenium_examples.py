@@ -26,7 +26,7 @@ A class that handles web navigation and JavaScript execution
 #%% WebScraper Class Implementation
 # region: WebScraper Class
 class WebScraper:
-    def __init__(self, headless=False):
+    def __init__(self, headless=True):
         """Initialize the WebScraper with Chrome options"""
         # Set up Chrome options
         chrome_options = Options()
@@ -89,7 +89,7 @@ Demonstrating how to use the WebScraper class
 # region: Example Usage
 def main():
     # Initialize the scraper
-    scraper = WebScraper(headless=False)
+    scraper = WebScraper(headless=True)
     
     try:
         # Navigate to a website
