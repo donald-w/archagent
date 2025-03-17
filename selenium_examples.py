@@ -113,6 +113,9 @@ def main():
         # Scroll to bottom and get more content
         scraper.scroll_to_bottom()
         
+        # Pause before closing
+        input("\nPress Enter to close the browser...")
+        
     finally:
         # Always close the browser
         scraper.close()
